@@ -1,3 +1,4 @@
+<script lang="ts" setup></script>
 <template>
   <q-layout>
     <q-page-container>
