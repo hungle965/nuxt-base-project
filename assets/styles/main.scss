@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-header {
-  background-color: aquamarine;
+.page-enter-active,
+.page-leave-active {
+  transition-duration: 0.2s;
+  transition-property: opacity filter;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(0.01rem);
+}
+
+.layout-enter-active,
+.layout-leave-active {
+  transition-duration: 0.2s;
+  transition-property: opacity filter;
+}
+.layout-enter-from,
+.layout-leave-to {
+  opacity: 0;
+  filter: blur(0.01rem);
 }

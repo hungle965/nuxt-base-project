@@ -1,14 +1,10 @@
 <template>
-  <q-layout>
-    <q-page-container>
-      <q-page>
-        <Header />
-        <div class="flex">
-          <LeftNavigation />
-          <slot />
-        </div>
-        <Footer />
-      </q-page>
-    </q-page-container>
-  </q-layout>
+  <div>
+    <Header />
+    <div class="flex">
+      <LeftNavigation />
+      <slot />
+    </div>
+    <Footer />
+  </div>
 </template>

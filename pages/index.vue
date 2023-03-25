@@ -1,12 +1,12 @@
-<script setup lang="ts">
-onBeforeUnmount(() => {
-  console.log('cai gi day')
-})
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div class="h-[calc(100vh-100px)] flex-1">
-    <div>ftech index page</div>
-    <button @click="$router.push('/profile')">go to profile page</button>
+  <div class="min-h-[calc(100vh-100px)] flex-1 p-7">
+    <q-btn color="primary" @click="$router.push('/profile')">
+      profile page
+    </q-btn>
+    <q-btn color="secondary" @click="$router.push('/login')">
+      login page
+    </q-btn>
   </div>
 </template>
