@@ -4,7 +4,6 @@
       <q-page>
         <Header />
         <div class="flex">
-          <LeftNavigation />
           <slot />
         </div>
         <Footer />

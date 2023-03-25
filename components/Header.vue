@@ -1,11 +1,5 @@
-<script setup lang="ts">
-import { useCount } from '../composables/useFoo'
-const { count, plus } = useCount()
-</script>
-
 <template>
-  <header>
-    <div>Header here {{ count }}</div>
-    <button @click="plus">plus</button>
+  <header class="h-[100px] px-10 bg-[#2D2D2D] flex items-center">
+    <img src="/images/main-logo.png" class="h-[75px]" />
   </header>
 </template>
