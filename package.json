@@ -8,11 +8,12 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@quasar/vite-plugin": "^1.3.0",
     "nuxt": "^3.3.1"
   },
   "dependencies": {
     "@quasar/extras": "^1.15.11",
     "quasar": "^2.11.8",
-    "sass": "^1.60.0"
+    "sass": "1.32.12"
   }
 }

@@ -1,4 +1,4 @@
-import 'quasar/dist/quasar.prod.css'
+import '~/assets/styles/quasar.scss'
 import '@quasar/extras/material-icons/material-icons.css'
 import * as components from 'quasar'
 
