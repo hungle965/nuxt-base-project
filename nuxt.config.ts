@@ -17,7 +17,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       ENDPOINT: process.env.NUXT_ENDPOINT,
-      APP_NAME: process.env.NUXT_APP_NAME
+      APP_NAME: process.env.NUXT_APP_NAME,
+      BASE_URL: process.env.NUXT_BASE_URL
     }
   }
 })

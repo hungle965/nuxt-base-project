@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+definePageMeta({
+  middleware: ['auth']
+})
+</script>
 
 <template>
   <div class="min-h-[calc(100vh-100px)] flex-1 p-7">

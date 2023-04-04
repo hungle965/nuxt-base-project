@@ -20,3 +20,16 @@ declare interface BaseDataResponse {
   developer_message: string
   data: string | null
 }
+
+declare interface ILoginInput {
+  email: string
+  password: string
+}
+
+declare interface ILoginResponse {
+  status: string
+  status_code: number
+  message: string
+  developer_message: string
+  data: string | null
+}

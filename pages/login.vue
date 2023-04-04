@@ -1,23 +1,35 @@
 <script lang="ts" setup>
 import { useQuasar } from 'quasar'
 import { userRepo } from '~~/repository/user'
+import { useUserStore } from '~~/stores/user'
 
 definePageMeta({
   layout: 'no-auth'
 })
 
-const email = ref('')
-const password = ref('')
+const email = ref('wfdev@yopmail.com')
+const password = ref('123123')
 const $q = useQuasar()
+const router = useRouter()
+const userStore = useUserStore()
 
 const handleSubmitForm = async () => {
   try {
-    const res = await userRepo().login('studentnew@gmail.com', '1231233')
-    console.log(res)
+    $q.loading.show()
+    const { data } = await userRepo().login(email.value, password.value)
+    userStore.setToken(data.token)
+    userStore.setUser(data.user)
+    $q.notify({
+      message: 'Login success',
+      type: 'positive'
+    })
+    router.push('/profile')
   } catch (error: any) {
     $q.notify({
       message: error.message
     })
+  } finally {
+    $q.loading.hide()
   }
 }
 </script>

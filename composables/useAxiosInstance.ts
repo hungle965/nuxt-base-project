@@ -3,7 +3,6 @@ import axios, {
   AxiosResponse,
   InternalAxiosRequestConfig
 } from 'axios'
-import { LocalStorage } from 'quasar'
 
 export const useAxiosInstance = () => {
   interface APIRespError {
@@ -27,7 +26,7 @@ export const useAxiosInstance = () => {
   const api = axios.create({ baseURL: runtimeConfig.public.ENDPOINT })
 
   api.interceptors.request.use((config: InternalAxiosRequestConfig) => {
-    const token = LocalStorage.getItem(`${runtimeConfig.public.APP_NAME}_token`)
+    const token = useCookie(`${runtimeConfig.public.APP_NAME}_token`)
     if (token) {
       config.headers.Authorization = `Bearer ${token.toString()}`
     }
@@ -40,7 +39,8 @@ export const useAxiosInstance = () => {
     (response: AxiosResponse) => {
       if (response.data.status === 'success') return response.data
       if (response.data.status_code === 401) {
-        LocalStorage.remove(`${runtimeConfig.public.APP_NAME}_token`)
+        const token = useCookie(`${runtimeConfig.public.APP_NAME}_token`)
+        token.value = null
         location.reload()
       }
       return Promise.reject<APIRespError>(response.data)
