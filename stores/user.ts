@@ -18,7 +18,11 @@ export const useUserStore = defineStore('user', {
     },
     setToken(token: string | null) {
       const runtimeConfig = useRuntimeConfig()
-      const cookie = useCookie(`${runtimeConfig.public.APP_NAME}_token`)
+      const expiryDate = new Date()
+      expiryDate.setMonth(expiryDate.getMonth() + 1) // 1 month after created
+      const cookie = useCookie(`${runtimeConfig.public.APP_NAME}_token`, {
+        expires: expiryDate
+      })
       this.token = token
       if (token) {
         cookie.value = token?.toString()

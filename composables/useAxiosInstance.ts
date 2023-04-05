@@ -23,7 +23,7 @@ export const useAxiosInstance = () => {
 
   const runtimeConfig = useRuntimeConfig()
 
-  const api = axios.create({ baseURL: runtimeConfig.public.ENDPOINT })
+  const api = axios.create({ baseURL: runtimeConfig.public.BASE_URL })
 
   api.interceptors.request.use((config: InternalAxiosRequestConfig) => {
     const token = useCookie(`${runtimeConfig.public.APP_NAME}_token`)
