@@ -1,12 +1,6 @@
 <script setup lang="ts">
 const route = useRoute()
 const { data, error } = useFetch(`/api/product/${route.params.id}`)
-watch(error, () => {
-  console.log(error.value?.response)
-})
-onMounted(() => {
-  console.log(error.value?.response)
-})
 </script>
 
 <template>

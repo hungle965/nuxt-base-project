@@ -49,7 +49,6 @@ const handleSubmitForm = async (formEl: FormInstance | undefined) => {
       userStore.setUser(data.user)
       router.push('/profile')
     } catch (err: any) {
-      console.log(err)
       ElMessage({
         message: err.message,
         type: 'error'
