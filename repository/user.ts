@@ -4,19 +4,19 @@ export interface LoginSuccess {
 }
 
 export const userRepo = () => {
-  const api = useAxiosInstance()
+  const { $api } = useNuxtApp()
   return {
     login: (email: string, password: string) =>
-      api.post<LoginSuccess>('/login', { email, password }),
-    fetchUser: () => api.get<User>('/profile'),
+      $api.post<LoginSuccess>('/login', { email, password }),
+    fetchUser: () => $api.get<User>('/profile'),
     forgotPassword: (email: string, url: string) =>
-      api.post<BaseDataResponse>('/forgot-password', { email, url }),
+      $api.post<BaseDataResponse>('/forgot-password', { email, url }),
     resetPassword: (
       new_password: string,
       confirm_password: string,
       token: string
     ) =>
-      api.post<User>(`/reset-password/${token}`, {
+      $api.post<User>(`/reset-password/${token}`, {
         new_password,
         confirm_password
       }),
@@ -25,7 +25,7 @@ export const userRepo = () => {
       new_password: string,
       confirm_password: string
     ) =>
-      api.post<User>('/change-password', {
+      $api.post<User>('/change-password', {
         old_password,
         new_password,
         confirm_password

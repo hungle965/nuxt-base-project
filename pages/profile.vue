@@ -6,6 +6,6 @@ definePageMeta({
 
 <template>
   <div class="min-h-[calc(100vh-100px)] flex-1 p-7">
-    <q-btn color="primary" @click="$router.push('/')"> home page </q-btn>
+    <el-button @click="$router.push('/')">home page</el-button>
   </div>
 </template>
