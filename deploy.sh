@@ -20,9 +20,9 @@ echo "Deploying..."
 SCRIPT1="mkdir -p $DEPLOY_SOURCE_FOLDER_NAME && tar -xzvf $FILE_NAME"
 SCRIPT2="rm -rf $DEPLOY_SOURCE_FOLDER_NAME/!\(uploads\)"
 SCRIPT3="rsync -a $SOURCE_FOLDER_NAME/* $DEPLOY_SOURCE_FOLDER_NAME/"
-SCRIPT4="rm -rf $SOURCE_FOLDER_NAME"
+# SCRIPT4="rm -rf $SOURCE_FOLDER_NAME"
 SCRIPT5="rm $FILE_NAME"
-ssh $SERVER "$SCRIPT1 && $SCRIPT2 && $SCRIPT3 && $SCRIPT4 && $SCRIPT5"
+ssh $SERVER "$SCRIPT1 && $SCRIPT2 && $SCRIPT3 && $SCRIPT5"
 
 echo "=================================="
 rm -rf $FILE_NAME
